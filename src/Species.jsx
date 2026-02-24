@@ -1,5 +1,5 @@
 import { useState } from "react"
-import "./species.css"
+import "./Species.css"
 
 import img1 from "./assets/species/1.jpg"
 import img2 from "./assets/species/2.png"
