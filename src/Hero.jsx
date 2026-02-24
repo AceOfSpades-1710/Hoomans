@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lenis from "lenis"
 import hands from "./assets/hands.png"
 import scenery from "./assets/scenery.png"
-import "./hero.css"
+import "./Hero.css"
 
 gsap.registerPlugin(ScrollTrigger)
 
