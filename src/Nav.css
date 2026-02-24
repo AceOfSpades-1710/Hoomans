@@ -1,0 +1,48 @@
+
+.nav {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  transform: translateX(23%);
+  width: auto;
+  padding: 14px 28px;
+  cursor: pointer;
+  background: rgba(82, 81, 81, 0.272); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(25, 24, 24, 0.08),
+    0 8px 30px rgba(0, 0, 0, 0.6);
+
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family:"Google Sans Code", monospace ;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  color: white;
+  text-shadow:
+    0 0 20px rgba(255,255,255,.35),
+    0 0 60px rgba(255,255,255,.15);
+}

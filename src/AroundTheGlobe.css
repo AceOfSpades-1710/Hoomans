@@ -1,0 +1,53 @@
+.around-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 4rem 6vw;
+  box-sizing: border-box;
+}
+
+.around-inner {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+}
+
+@media (max-width: 900px) {
+  .around-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.around-left{
+  outline: 1px solid white;
+  padding: 4rem;
+}
+
+.around-left h1 {
+  font-size: 3.8rem;
+  margin-bottom: 1rem;
+  font-family: "Zalando Sans Expanded", sans-serif;
+}
+
+.around-left p {
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.85;
+  font-family: "Numans", sans-serif;
+  text-align: justify;
+}
+
+.around-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,129 @@
+:root {
+  --progress: 0;
+  --tear-point: 52%;
+}
+
+/* Full bleed guarantee */
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #050505;
+  overflow-x: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+/* HERO */
+
+.reveal {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  perspective: 1200px;
+
+  --scene-switch: clamp(0, calc((var(--progress) - 0.45) * 3), 1);
+}
+
+/* Scenery */
+
+.scenery {
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+/* Cinematic fade to black at bottom */
+
+.scenery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(5,5,5,0) 55%,
+    rgba(5,5,5,0.4) 70%,
+    rgba(5, 5, 5, 0.985) 85%,
+    #050505 100%
+  );
+}
+
+.scenery img {
+  width: 110%;
+  height: 110%;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+/* Hands */
+
+.hands-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.tear {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.tear img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tear--left {
+  clip-path: inset(0 calc(100% - var(--tear-point)) 0 0);
+  transform: translateX(calc(var(--progress) * -70vw));
+}
+
+.tear--right {
+  clip-path: inset(0 0 0 var(--tear-point));
+  transform: translateX(calc(var(--progress) * 70vw));
+}
+
+/* Title */
+
+.reveal-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12vw;
+  line-height: 1.1;
+  color: white;
+  opacity: 0;
+  transform: translateY(40px);
+  pointer-events: none;
+  z-index: 3;
+  font-weight: 1000;
+  text-shadow:
+    0 0 20px rgba(255,255,255,.35),
+    0 0 60px rgba(255,255,255,.15);
+}
+
+.reveal-title span {
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  font-family: "Long Cang", cursive;
+}

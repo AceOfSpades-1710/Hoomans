@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: black;
+  font-family: Arial, sans-serif;
+}
+
+.species-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-stack {
+  position: absolute;
+  inset: 0;
+}
+
+.image-stack img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding-left: 50%;
+
+  opacity: 0;
+  transform: translateY(60px) scale(1.15);
+  filter: blur(10px) brightness(80%);
+  transition:
+    opacity 1s ease,
+    transform 1.4s cubic-bezier(.22,1,.36,1),
+    filter 1.2s ease;
+}
+
+
+.image-stack img.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0) brightness(100%);
+}
+
+
+.slider-content {
+  position: relative;
+  z-index: 5;
+  padding-top: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 5rem;
+  max-width: 700px;
+  color: white;
+  line-height: 1.5;
+}
+
+.slider-content h1{
+  font-family: "Zalando Sans Expanded", sans-serif;
+}
+.slider-content p{
+  font-family: "Google Sans Code", monospace;
+  font-size: 1.3rem;
+  padding-right: 5%;
+}
+.slider-content span{
+  font-family: "Zalando Sans Expanded", sans-serif;
+}
+
+.meta {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #888;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: serif;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  margin: 20px 0 50px;
+}
+
+.status {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.pagination {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 10;
+}
+
+.pagination button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  opacity: 0.25;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pagination button:hover {
+  opacity: 0.5;
+}
+
+.pagination button.active {
+  opacity: 1;
+  transform: scale(1.6);
+}
+

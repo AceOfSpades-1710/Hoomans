@@ -1,0 +1,75 @@
+.breakthrough-container {
+  position: relative;
+  height: 133vh;
+  background: black;
+}
+
+/* Background layer */
+.motion-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Ensure MotionScene fills */
+.motion-bg canvas,
+.motion-bg video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Foreground pinned to viewport */
+.motion-foreground {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  perspective: 1400px;
+}
+
+/* Title styling */
+.title {
+  position: absolute;
+  display: flex;
+  font-weight: 900;
+  font-size: 7rem;
+  letter-spacing: -0.04em;
+  color: white;
+  user-select: none;
+  font-family: "Zalando Sans Expanded", sans-serif;
+  text-shadow:
+    0 0 20px rgba(255,255,255,.35),
+    0 0 60px rgba(255,255,255,.15);
+  will-change: transform;
+}
+
+.title span{
+  font-size: 4rem;
+  font-family: "Long Cang", cursive;
+  padding-left: 6rem;
+  line-height: 0;
+}
+
+
+/* Skull images */
+.skull {
+  position: absolute;
+  width: 38vw;
+  max-width: 620px;
+  object-fit: contain;
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
